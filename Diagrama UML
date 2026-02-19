@@ -1,0 +1,44 @@
+class Bomberman
+class Vida
+class Personaje
+class Explosion
+class Mapa
+class Bloque
+class BloqueDestructible
+class BloqueIndestructible
+class Enemigo
+class PowerUp
+class Nivel
+class Juego
+class Temporizador
+class Puntaje
+class Movimiento
+class Direccion
+class Colision
+class Partida
+class Menu
+class Sonido
+class EfectoExplosion
+class Controlador
+class Jugador
+class SistemaPowerUp
+class Bomba
+class Enemigo
+class Balloon
+class Oneal
+class Doll
+class Minvo
+class Kondoria
+class Ovapi
+
+Balloon --|> Enemigo
+Oneal --|> Enemigo
+Doll --|> Enemigo
+Minvo --|> Enemigo
+Kondoria --|> Enemigo
+Ovapi --|> Enemigo
+
+Bomberman --|> Personaje
+Bomberman *-- Vida
+Bomberman o-- Bomba
+Ballon --|> Enemigo
