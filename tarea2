@@ -62,4 +62,4 @@ Enemigo --|> Personaje
 Bomba *-- Explosion
 Explosion *-- EfectoExplosion
 Juego *-- SistemaColisiones
-Juego *-- Sonido
+Juego *-- Sonido 
