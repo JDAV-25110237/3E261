@@ -96,3 +96,18 @@ Bomba 1 ----- 1 Explosion
 Explosion 1 ----- 1 EfectoExplosion
 
 SistemaColisiones 1 ----- 0..* Colision
+
+class Bomberman{
+- vida : Vida
++ bomba(Item)
++ morir()
+}
+
+Bomberman ----> Vida
+Bomberman ----> Item
+class Item 
+class Bomba{
+-Item contenido
++Item : Explotar ()
+    }
+Bomba ----|> Item 
