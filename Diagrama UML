@@ -1,6 +1,7 @@
 class Bomberman
 class Personaje
 class Vida
+class Item
 class Bomba
 class Explosion
 class Mapa
@@ -27,39 +28,3 @@ class Controlador
 class Jugador
 class SistemaPowerUp
 class SistemaColisiones
-class SistemaSpawnEnemigos
-
-BloqueDestructible --|> Bloque
-BloqueIndestructible --|> Bloque
-PowerUpVelocidad --|> PowerUp
-PowerUpBombaExtra --|> PowerUp
-PowerUpAlcance --|> PowerUp
-
-Juego *-- Menu
-Juego *-- Partida
-Juego *-- Nivel
-Juego *-- SistemaColisiones
-Juego *-- SistemaPowerUp
-Juego *-- SistemaSpawnEnemigos
-Juego *-- Temporizador
-Juego *-- Puntaje
-
-Mapa *-- Bloque
-Mapa o-- Enemigo
-Mapa o-- PowerUp
-Mapa o-- Bomba
-
-Bomberman *-- Vida
-Bomberman o-- Bomba
-Bomberman o-- PowerUp
-Bomberman o-- Movimiento
-
-Jugador *-- Controlador
-Controlador o-- Direccion
-Controlador o-- Movimiento
-Bomberman --|> Personaje
-Enemigo --|> Personaje
-Bomba *-- Explosion
-Explosion *-- EfectoExplosion
-Juego *-- SistemaColisiones
-Juego *-- Sonido

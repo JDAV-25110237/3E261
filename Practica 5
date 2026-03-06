@@ -39,15 +39,15 @@ Enemigo --|> Personaje
 Bomba --|> Item
 
 Juego "1" *-- "1" Menu
-Juego "1" -- "1..*" Partida
-Juego "1" -- "1..*" Nivel
+Juego "1" -- "1.." Partida
+Juego "1" -- "1.." Nivel
 Juego "1" *-- "1" SistemaColisiones
 Juego "1" *-- "1" SistemaPowerUp
 Juego "1" *-- "1" Temporizador
 Juego "1" *-- "1" Puntaje
 Juego "1" *-- "1" Sonido
 
-Mapa "1" -- "1..*" Bloque
+Mapa "1" -- "1.." Bloque
 Mapa "1" o-- "0..*" Enemigo
 Mapa "1" o-- "0..*" PowerUp
 Mapa "1" o-- "0..*" Bomba
@@ -63,6 +63,15 @@ Controlador "1" o-- "1" Movimiento
 
 Bomba "1" *-- "1" Explosion
 Explosion "1" *-- "1" EfectoExplosion
+
+Juego "1" ----- "1" Menu
+Juego "1" ----- "1..*" Partida
+Juego "1" ----- "1..*" Nivel
+Juego "1" ----- "1" SistemaColisiones
+Juego "1" ----- "1" SistemaPowerUp
+Juego "1" ----- "1" Temporizador
+Juego "1" ----- "1" Puntaje
+Juego "1" ----- "1" Sonido
 
 Nivel "1" ----- "1" Mapa
 
@@ -88,7 +97,7 @@ Explosion "1" ----- "1" EfectoExplosion
 SistemaColisiones "1" ----- "0..*" Colision
 
 class Bomberman{
-- vida : Vida
+- ⁠Vida : vida
 + colocarBomba()
 + morir()
 }
@@ -104,3 +113,128 @@ class Bomba{
 }
 
 Bomba --|> Item
+
+class Bomberman{
+- Vida : vida
++ colocarBomba()
++ morir()
+}
+
+class Personaje{
+- Movimiento : movimiento
++ mover()
+}
+
+class Vida{
+- Estado : vida
++ perderVida()
+}
+
+class Item
+
+class Bomba{
+- Contenido : Item
++ explotar()
+}
+
+class Explosion{
+- Efecto explocion : efecto 
++ activar()
+}
+
+class Mapa{
+- Bloque : bloque
++ generarEnemigo()
+}
+
+class Bloque
+
+class BloqueDestructible{
+- BloqueDestructible : resistencia
++ destruir()
+}
+
+class BloqueIndestructible
+
+class Enemigo{
+- Movimiento : movimiento
++ atacar()
+}
+
+class PowerUp{
+- PowerUp : efecto 
++ aplicar()
+}
+
+class Nivel{
+- Mapa : mapa
++ cargar()
+}
+
+class Juego{
+- Partida : partida
++ iniciar()
++ terminar()
+}
+
+class Temporizador{
+- Temporizador : tiempo 
++ contar()
+}
+
+class Puntaje{
+- Puntaje : puntos 
++ sumar()
+}
+
+class Movimiento{
+- Direccion : direccion
++ mover()
+}
+
+class Direccion
+
+class Colision{
+- Colision : objeto
++ detectar()
+}
+
+class Partida{
+- Nivel : nivel
++ empezar()
+}
+
+class Menu{
+- Menu : opcion 
++ seleccionar()
+}
+
+class Sonido{
+- Sonido : efecto
++ reproducir()
+}
+
+class EfectoExplosion{
+- EfectoExplosion : intensidad 
++ mostrar()
+}
+
+class Controlador{
+- Direccion : direccion
++ controlar()
+}
+
+class Jugador{
+- Bomberman : bomberman 
++ jugar()
+}
+
+class SistemaPowerUp{
+- PowerUp : powerUp
++ activar()
+}
+
+class SistemaColisiones{
+- Colision : colision
++ detectar()
+}
